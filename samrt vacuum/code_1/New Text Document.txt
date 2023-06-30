@@ -1,0 +1,323 @@
+//LCD
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(23, 25, 27, 29, 31, 33, 35, 37, 39, 41);
+
+// VOLT
+float Amp, Pw, Voltres, Voltin;
+
+//WATER
+int level_1   = A9;
+int level_2   = A10;
+int level_3   = A11;
+int level_4   = A12;
+int level_5   = A13;
+int level_6   = A14;
+int a;
+int b;
+int c;
+int d;
+int e;
+int s;
+int z = 100;
+
+// RELAY 1 & 2
+int relay1 = 50;
+int sw1    = 49;
+int relay2 = 52;
+int sw2    = 45;
+
+int Y1 ;
+int Y2 ;
+int A = 0;
+int Y;
+
+// MOTOR
+int r1 = 7;
+int r2 = 8;
+int R1 = 5;
+int R2 = 4;
+int en1 = 6;
+int en2 = 3;
+
+//IR
+int ir1 = A4 ;
+int ir2 = A5 ;
+
+// ULTRASONIC
+int trig1  = 44;
+int echo1  = 46;
+float duration1;
+int distance1;
+float ultrasonic1()
+{
+  digitalWrite(trig1, LOW);
+  digitalWrite(trig1, HIGH);
+  digitalWrite(trig1, LOW);
+  duration1 = pulseIn(echo1, HIGH);
+  distance1 = 0.034 * duration1 / 2;
+}
+int trig2  = 40;
+int echo2  = 42;
+float duration2;
+int distance2;
+float ultrasonic2()
+{
+  digitalWrite(trig2, LOW);
+  digitalWrite(trig2, HIGH);
+  digitalWrite(trig2, LOW);
+  duration2 = pulseIn(echo2, HIGH);
+  distance2 = 0.034 * duration2 / 2;
+}
+
+int trig3  = 32;
+int echo3  = 34;
+float duration3;
+int distance3;
+float ultrasonic3()
+{
+  digitalWrite(trig3, LOW);
+  digitalWrite(trig3, HIGH);
+  digitalWrite(trig3, LOW);
+  duration3 = pulseIn(echo3, HIGH);
+  distance3 = 0.034 * duration3 / 2;
+}
+
+int trig4  = 28;//
+int echo4  = 30;//
+float duration4;
+int distance4;
+float ultrasonic4()
+{
+  digitalWrite(trig4, LOW);
+  digitalWrite(trig4, HIGH);
+  digitalWrite(trig4, LOW);
+  duration4 = pulseIn(echo4, HIGH);
+  distance4 = 0.034 * duration4 / 2;
+}
+int trig5  = 36;//
+int echo5  = 38;//
+float duration5;
+int distance5;
+float ultrasonic5()
+{
+  digitalWrite(trig5, LOW);
+  digitalWrite(trig5, HIGH);
+  digitalWrite(trig5, LOW);
+  duration5 = pulseIn(echo5, HIGH);
+  distance5 = 0.034 * duration5 / 2;
+}
+
+// Motion
+void straight()
+{
+  digitalWrite(r1, 0);
+  digitalWrite(r2, en1);
+  digitalWrite(R1, 0);
+  digitalWrite(R2, en2);
+}
+void right()
+{
+  digitalWrite(r1, 0);
+  digitalWrite(r2, 0);
+  digitalWrite(R1, 0);
+  digitalWrite(R2, en2 );
+}
+void left()
+{
+  digitalWrite(r1, 0);
+  digitalWrite(r2, en1);
+  digitalWrite(R1, 0);
+  digitalWrite(R2, 0 );
+}
+void Back()
+{
+  digitalWrite(r1, en1);
+  digitalWrite(r2, 0);
+  digitalWrite(R1, en2);
+  digitalWrite(R2, 0);
+}
+
+// delay
+unsigned long perviosTime = 0  ;
+unsigned long gerviosTime = 2000  ;
+
+void setup() {
+
+  pinMode(echo1, INPUT);
+  pinMode(trig1, OUTPUT);
+  pinMode(echo2, INPUT);
+  pinMode(trig2, OUTPUT);
+  pinMode(echo3, INPUT);
+  pinMode(trig3, OUTPUT);
+
+  pinMode(r1,   OUTPUT);
+  pinMode(r2,   OUTPUT);
+  pinMode(R1,   OUTPUT);
+  pinMode(R2,   OUTPUT);
+  pinMode(en1, OUTPUT);
+  pinMode(en2, OUTPUT);
+
+  pinMode(level_1, INPUT);
+  pinMode(level_2, INPUT);
+  pinMode(level_3, INPUT);
+  pinMode(level_4, INPUT);
+  pinMode(level_5, INPUT);
+  pinMode(level_6, INPUT);
+
+  lcd.begin(16, 2);
+  Serial.begin (9600);
+
+  pinMode(relay1, OUTPUT);
+  pinMode(sw1,    INPUT);
+  pinMode(relay2, OUTPUT);
+  pinMode(sw2,    INPUT);
+
+}
+
+void loop() {
+
+  a = analogRead(level_1);
+  b = analogRead(level_2);
+  c = analogRead(level_3);
+  d = analogRead(level_4);
+  e = analogRead(level_5);
+  s = analogRead(level_6);
+  if ( s > z && e > z && d > z && c > z && b > z && a > z )
+  {
+    lcd.setCursor(0, 1);
+    lcd.print("tank over full");
+  }
+  if (s < z && e > z && d > z && c > z && b > z && a > z )
+  {
+    lcd.setCursor(0, 1);
+    lcd.print("Tank is 100% ");
+  }
+  else if ( s < z &&  e < z && d > z && c > z && b > z && a > z )
+  {
+    lcd.setCursor(0, 1);
+    lcd.print("Tank is 80% ");
+  }
+  else if ( s < z && e < z && d < z && c > z && b > z && a > z )
+  {
+    lcd.setCursor(0, 1);
+    lcd.print("Tank is 60% ");
+  }
+  else if (s < z && e < z && d < z && c < z && b > z && a > z )
+  {
+    lcd.setCursor(0, 1);
+    lcd.print("Tank is 40%    ");
+  }
+  else if (s < z && e < z && d < z && c < z && b < z && a > z )
+  {
+    lcd.setCursor(0, 1);
+    lcd.print("Tank is 20% ");
+  }
+
+  else if (s < z && e < z && d < z && c < z && b < z && a < z )
+  {
+    lcd.setCursor(0, 1);
+    lcd.print("Tank is EMPTY   ");
+  }
+
+
+
+  int ADC1 = analogRead(A15);
+  //**************حساب التوتر *****************//
+  Voltin   = ADC1 * 4.88 * 0.00601;
+  Pw       = Voltin * Amp * 0.001 ;
+  lcd.setCursor(1, 0);
+  lcd.print("V:");
+  lcd.print(Voltin);
+  lcd.print("V");
+  unsigned long currentTime ;
+  currentTime = millis ();
+  if ((currentTime - perviosTime  ) >= gerviosTime)
+  {
+    lcd.clear();
+    perviosTime = currentTime;
+  }
+
+
+
+  Y1 = digitalRead (sw1);
+  if (Y1 == HIGH) {
+    digitalWrite(relay1 , HIGH );
+  }
+  else  digitalWrite(relay1 , LOW );
+
+
+
+  
+  Y2 = digitalRead (sw2);
+  if (Y2 == HIGH) {
+
+static uint8_t tog=0;
+static uint32_t oldtime=millis();
+
+    if ( (millis()-oldtime) > 1000) {
+       oldtime = millis();
+
+       tog = ~tog; // Invert
+       if (tog) digitalWrite(relay2,HIGH);
+       else digitalWrite(relay2,LOW);
+
+    }
+
+
+  }
+
+
+    
+   
+
+
+
+
+
+
+
+  analogWrite(en1 , 80);
+  analogWrite(en2 , 80);
+
+  ultrasonic1();
+  ultrasonic2();
+
+
+  Serial.print ("distance1 =");
+  Serial.println(distance1);
+  Serial.print ("distance2 =");
+  Serial.println(distance2);
+
+
+  if (distance1 < 25)
+  {
+    A++;
+  }
+
+  if ( A == 0  || A == 2 )
+  {
+    straight();
+  }
+
+  if (A == 1)
+  {
+    left ();
+    //delay(2700);//////////////////
+    A = 2;
+  }
+
+  if (A == 3)
+  {
+    right ();
+    // delay(2700);/////////////////
+    A = 4;
+  }
+
+  if (A == 4)
+  {
+    A = 0 ;
+  }
+
+
+
+}

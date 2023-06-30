@@ -1,0 +1,204 @@
+(Scribbled version of /var/folders/11/sbyvdg591bq4j9mxgsykxjkm0000gn/T/ink_ext_XXXXXX.svgRM18EZ @ 3500.00)
+( unicorn.py --tab="plotter_setup" --pen-up-angle=50 --pen-down-angle=30 --start-delay=150 --stop-delay=150 --xy-feedrate=3500 --z-feedrate=150 --z-height=0 --finished-height=0 --register-pen=true --x-home=0 --y-home=0 --num-copies=1 --continuous=false --pause-on-layer-change=false /var/folders/11/sbyvdg591bq4j9mxgsykxjkm0000gn/T/ink_ext_XXXXXX.svgRM18EZ )
+G21 (metric ftw)
+G90 (absolute mode)
+G92 X0.00 Y0.00 Z0.00 (you are here)
+
+M300 S30 (pen down)
+G4 P150 (wait 150ms)
+M300 S50 (pen up)
+G4 P150 (wait 150ms)
+M18 (disengage drives)
+M01 (Was registration test successful?)
+M17 (engage drives if YES, and continue)
+
+(Polyline consisting of 12 segments.)
+G1 X1.94 Y37.77 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X1.94 Y19.80 F3500.00
+G1 X1.94 Y1.83 F3500.00
+G1 X19.90 Y1.83 F3500.00
+G1 X37.88 Y1.83 F3500.00
+G1 X37.88 Y19.80 F3500.00
+G1 X37.88 Y37.77 F3500.00
+G1 X19.90 Y37.77 F3500.00
+G1 X1.94 Y37.77 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X37.76 Y37.66 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X37.76 Y19.80 F3500.00
+G1 X37.76 Y1.94 F3500.00
+G1 X19.90 Y1.94 F3500.00
+G1 X2.04 Y1.94 F3500.00
+G1 X2.08 Y19.77 F3500.00
+G1 X2.10 Y37.60 F3500.00
+G1 X19.94 Y37.63 F3500.00
+G1 X37.76 Y37.66 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X5.54 Y34.16 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X5.54 Y19.80 F3500.00
+G1 X5.54 Y5.44 F3500.00
+G1 X19.90 Y5.44 F3500.00
+G1 X34.27 Y5.44 F3500.00
+G1 X34.27 Y19.80 F3500.00
+G1 X34.27 Y34.16 F3500.00
+G1 X19.90 Y34.16 F3500.00
+G1 X5.54 Y34.16 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X20.09 Y34.06 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X34.16 Y34.06 F3500.00
+G1 X34.16 Y19.80 F3500.00
+G1 X34.16 Y5.54 F3500.00
+G1 X19.90 Y5.54 F3500.00
+G1 X5.65 Y5.54 F3500.00
+G1 X5.65 Y19.73 F3500.00
+G1 X5.83 Y33.98 F3500.00
+G1 X20.09 Y34.06 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X9.14 Y30.56 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X9.14 Y19.80 F3500.00
+G1 X9.14 Y9.03 F3500.00
+G1 X19.90 Y9.03 F3500.00
+G1 X30.67 Y9.03 F3500.00
+G1 X30.67 Y19.80 F3500.00
+G1 X30.67 Y30.56 F3500.00
+G1 X19.90 Y30.56 F3500.00
+G1 X9.14 Y30.56 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X9.26 Y30.45 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X19.90 Y30.45 F3500.00
+G1 X30.56 Y30.45 F3500.00
+G1 X30.56 Y19.80 F3500.00
+G1 X30.56 Y9.15 F3500.00
+G1 X19.90 Y9.15 F3500.00
+G1 X9.26 Y9.15 F3500.00
+G1 X9.26 Y19.80 F3500.00
+G1 X9.26 Y30.45 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X12.41 Y27.30 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X12.41 Y19.80 F3500.00
+G1 X12.41 Y12.28 F3500.00
+G1 X19.91 Y12.28 F3500.00
+G1 X27.40 Y12.31 F3500.00
+G1 X27.40 Y19.79 F3500.00
+G1 X27.40 Y27.29 F3500.00
+G1 X19.90 Y27.30 F3500.00
+G1 X12.41 Y27.30 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X27.28 Y27.19 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X27.26 Y19.83 F3500.00
+G1 X27.23 Y12.47 F3500.00
+G1 X19.88 Y12.45 F3500.00
+G1 X12.52 Y12.42 F3500.00
+G1 X12.55 Y19.77 F3500.00
+G1 X12.58 Y27.12 F3500.00
+G1 X19.94 Y27.15 F3500.00
+G1 X27.28 Y27.19 F3500.00
+G1 X27.28 Y27.19 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X15.46 Y24.25 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X15.46 Y19.80 F3500.00
+G1 X15.46 Y15.35 F3500.00
+G1 X19.90 Y15.35 F3500.00
+G1 X24.36 Y15.35 F3500.00
+G1 X24.36 Y19.80 F3500.00
+G1 X24.36 Y24.25 F3500.00
+G1 X19.90 Y24.25 F3500.00
+G1 X15.46 Y24.25 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X15.57 Y24.13 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X19.90 Y24.13 F3500.00
+G1 X24.24 Y24.13 F3500.00
+G1 X24.24 Y19.80 F3500.00
+G1 X24.24 Y15.46 F3500.00
+G1 X19.90 Y15.46 F3500.00
+G1 X15.57 Y15.46 F3500.00
+G1 X15.57 Y19.80 F3500.00
+G1 X15.57 Y24.13 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X18.16 Y21.55 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X18.16 Y19.80 F3500.00
+G1 X18.16 Y18.06 F3500.00
+G1 X19.90 Y18.06 F3500.00
+G1 X21.65 Y18.06 F3500.00
+G1 X21.65 Y19.80 F3500.00
+G1 X21.65 Y21.55 F3500.00
+G1 X19.90 Y21.55 F3500.00
+G1 X18.16 Y21.55 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+(Polyline consisting of 12 segments.)
+G1 X18.27 Y21.43 F3500.00
+M300 S30.00 (pen down)
+G4 P150 (wait 150ms)
+G1 X19.90 Y21.43 F3500.00
+G1 X21.54 Y21.43 F3500.00
+G1 X21.54 Y19.80 F3500.00
+G1 X21.54 Y18.16 F3500.00
+G1 X19.90 Y18.16 F3500.00
+G1 X18.27 Y18.16 F3500.00
+G1 X18.27 Y19.80 F3500.00
+G1 X18.27 Y21.43 F3500.00
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+
+
+(end of print job)
+M300 S50.00 (pen up)
+G4 P150 (wait 150ms)
+M300 S255 (turn off servo)
+G1 X0 Y0 F3500.00
+G1 Z0.00 F150.00 (go up to finished level)
+G1 X0.00 Y0.00 F3500.00 (go home)
+M18 (drives off)
